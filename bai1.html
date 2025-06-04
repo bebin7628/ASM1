@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách các cuốn sách trong thư viện</title>
+</head>
+<body>
+     <h2>Danh sách các cuốn sách trong thư viện</h2>
+    <script>
+        let books = [
+            { title: "Lập trình Java", author: "A", price: 100, available: true, genre: "CNTT" },
+            { title: "Thiết kế đồ họa", author: "B", price: 90, available: false, genre: "Thiết kế đồ họa" },
+            { title: "Marketting", author: "C", price: 120, available: true, genre: "Marketting" }
+        ];
+
+        console.log("<pre>" + JSON.stringify(books, null, 2) + "</pre>");
+
+        console.log("Giá sách thứ hai: " + books[1].price);
+
+        books.forEach(book => console.log(book));
+    </script>
+</body>
+</html>

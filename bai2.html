@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đối tượng nhân viên</title>
+</head>
+<body>
+      <script>
+        function nhanVien(hoTen, luongCB, heSo) {
+            this.hoTen = hoTen;
+            this.luongCB = luongCB;
+            this.heSo = heSo;
+            this.tinhLuong = function() {
+                return this.luongCB * this.heSo;
+            };
+        }
+
+        let hoTen = prompt("Nhập họ tên:");
+        let luongCB = parseFloat(prompt("Nhập lương cơ bản:"));
+        let heSo = parseFloat(prompt("Nhập hệ số lương:"));
+
+        let nv = new nhanVien(hoTen, luongCB, heSo);
+
+        document.write("Nhân viên: " + nv.hoTen + "<br>");
+        document.write("Lương: " + nv.tinhLuong());
+    </script>
+</body>
+</html>

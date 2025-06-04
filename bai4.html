@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiển thị đồng hồ</title>
+</head>
+<body>
+    <button onclick="hienGio()">[Hiển thị ngày giờ hiện tại]</button>
+    <button onclick="anDongHo()">[Ẩn đồng hồ]</button>
+    <button onclick="hienDongHo()">[Hiển thị lại đồng hồ]</button>
+
+    <div id="dongho" style="font-weight:bold; margin-top:10px;"></div>
+
+    <script>
+        let intervalID;
+
+        function hienGio() {
+            intervalID = setInterval(() => {
+                let now = new Date();
+                document.getElementById("dongho").innerHTML = 
+                    now.toLocaleTimeString() + " - " + now.toLocaleDateString();
+            });
+        }
+
+        function anDongHo() {
+            clearInterval(intervalID);
+            document.getElementById("dongho").style.display = "none";
+        }
+
+        function hienDongHo() {
+            document.getElementById("dongho").style.display = "block";
+            hienGio();
+        }
+    </script>
+</body>
+</html>
